@@ -13,11 +13,13 @@ public class TicTacToe {
         display();
 
         while(true) {
+            int getRow;
+            int getCol;
             int row;
             int col;
             do {
-                row = SafeInput.getRangedInt(in, "Player " + player + " Please choose which row 0-2", 0, 2);
-                col = SafeInput.getRangedInt(in, "Player " + player + " Please choose which column 0-2", 0, 2);
+                row = SafeInput.getRangedInt(in, "Player " + player + " Please choose which row 1-3", 1, 3) - 1;
+                col = SafeInput.getRangedInt(in, "Player " + player + " Please choose which column 1-3", 1, 3) - 1;
 
             } while (!isValidMove(row, col));
             board[row][col] = player;
